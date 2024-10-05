@@ -5,7 +5,7 @@ pipeline {
 	}	
 	stages {        
 		stage('Clone'){			
-			steps {git url:'https://github.com/rohitha987/service-registry.git', branch:'main’}			}		
+			steps {git url:'https://github.com/rohitha987/service-registry.git', branch:'main'}			}		
 		stage('Build'){			
 			steps {bat "mvn clean install -DskipTests"}		
 		}		
