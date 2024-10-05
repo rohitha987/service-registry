@@ -5,7 +5,8 @@ pipeline {
 	}	
 	stages {        
 		stage('Clone'){			
-			steps {git url:'https://github.com/rohitha987/service-registry.git', branch:'main'}			}		
+			steps {git url:'https://github.com/rohitha987/service-registry.git', branch:'main'}	
+		}		
 		stage('Build'){			
 			steps {bat "mvn clean install -DskipTests"}		
 		}		
@@ -17,4 +18,3 @@ pipeline {
 			            bat "docker run -p 8761:8761 -d --name servicereg-container servicereg-image"}		
 		}		
 	}
-}
